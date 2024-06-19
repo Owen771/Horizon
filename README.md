@@ -23,6 +23,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 # init next.js & shadcn ui
 npx create-next-app@latest ./ --typescript --tailwind --eslint
 npx shadcn-ui@latest init
-
 ```
 
