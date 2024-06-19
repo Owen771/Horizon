@@ -1,4 +1,8 @@
-## Next.js benefits
+## Next.js 
+
+- By default, all components in Next js is a server components, unless specify otherwise
+
+Feature
 
 - SSR (server side rendering)
 - Route groups

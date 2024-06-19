@@ -1,5 +1,6 @@
-# Personal banking app (with Dashboard)
+# Horizon 
 
+- A personal banking app come with a Dashboard
 
 ## Getting Started
 
