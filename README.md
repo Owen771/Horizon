@@ -9,14 +9,18 @@ First, run the development server:
 ```bash
 npm run dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Tech stack
 
-- node.js (v18.17.0): runtime env for Next.js
-- typescript: type safety
-- tailwindcss: styling
-- eslint: ensure code quality
+- Next.js (React)
+- Node.js (v18.17.0): runtime env for Next.js
+- Typescript: type safety
+- Tailwindcss: styling
+- Eslint: ensure code quality
+- Zod: TypeScript-first schema validation with static type inference (one use case is form)
+- Shadcn ui: Component library, [import Components](components/ui)
 
 ## Setup
 

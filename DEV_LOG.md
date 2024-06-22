@@ -25,7 +25,7 @@ Feature
 ```
 
 
-## Files
+## Non src code Files
 
 1. [tailwind conf file](tailwind.config.ts)
 
@@ -61,6 +61,23 @@ It defined some styles globally, and it can be accessed like `text-success-900` 
 Route groups are useful for:
 - Organizing routes into groups e.g. by site section, intent, or team.
 - Enabling nested layouts in the same route segment level (all route in same group can share the layout)
+
+## Root (route to 4 pages)
+Global sidebar / mobile nav bar 
+1. Home Page
+  - header + TotalBalance
+  - right side bar, showing user info and its cards
+
+2. my banks
+3. trnx history
+4. transfer funds 
+
+## Auth
+
+- AuthForm for both sign-in and sign-up 
+  - used shadcn ui form 
+  - the page of sign-in and sign-up usually is server side [sign in page](app/(auth)/sign-in/page.tsx), but the form inside them is client side [authform](components/AuthForm.tsx)
+  - form always have to be used `'use client'`, becoz of the keyboard and mouse event, such as onSubmit, key press etc
 
 
 ## Reference
