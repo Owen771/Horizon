@@ -82,6 +82,7 @@ Global sidebar / mobile nav bar
 
 
 
+
 `getLoggedInUser` from appwrite
 ```json
 {
@@ -106,7 +107,7 @@ Global sidebar / mobile nav bar
       '$updatedAt': '2024-06-23T01:21:53.689+00:00',
       name: '',
       userId: '667778af001d00ae14a4',
-      providerId: null,
+      providerId: null, 
       providerType: 'email',
       identifier: 'contact@mail.pro'
     }
@@ -114,6 +115,11 @@ Global sidebar / mobile nav bar
   accessedAt: '2024-06-23T01:21:53.620+00:00'
 }
 ```
+
+
+Login:
+- contact@mail.pro
+- password
 
 ## Next.js backend interact
 
