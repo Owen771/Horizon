@@ -78,8 +78,52 @@ Global sidebar / mobile nav bar
   - used shadcn ui form 
   - the page of sign-in and sign-up usually is server side [sign in page](app/(auth)/sign-in/page.tsx), but the form inside them is client side [authform](components/AuthForm.tsx)
   - form always have to be used `'use client'`, becoz of the keyboard and mouse event, such as onSubmit, key press etc
+  - the data submitted from form -> send to appwrite async
 
 
+
+`getLoggedInUser` from appwrite
+```json
+{
+  '$id': '667778af001d00ae14a4',
+  '$createdAt': '2024-06-23T01:21:53.627+00:00',
+  '$updatedAt': '2024-06-23T01:21:53.627+00:00',
+  name: 'Owen JSM',
+  registration: '2024-06-23T01:21:53.620+00:00',
+  status: true,
+  labels: [],
+  passwordUpdate: '2024-06-23T01:21:53.620+00:00',
+  email: 'contact@mail.pro',
+  phone: '',
+  emailVerification: false,
+  phoneVerification: false,
+  mfa: false,
+  prefs: {},
+  targets: [
+    {
+      '$id': '667778b1a85c80c71fb2',
+      '$createdAt': '2024-06-23T01:21:53.689+00:00',
+      '$updatedAt': '2024-06-23T01:21:53.689+00:00',
+      name: '',
+      userId: '667778af001d00ae14a4',
+      providerId: null,
+      providerType: 'email',
+      identifier: 'contact@mail.pro'
+    }
+  ],
+  accessedAt: '2024-06-23T01:21:53.620+00:00'
+}
+```
+
+## Next.js backend interact
+
+- https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations
+- Server Actions are asynchronous functions that are executed on the server. They can be used in Server and Client Components to handle form submissions and data mutations in Next.js applications.
+- `'use server'`
+- [backend func](lib/actions)
+
+
+ 
 ## Reference
 
 - [App design in Figma](https://www.figma.com/design/jvcjzjCKw9YlhCNOIY1GPY/Horizon-Banking-App?node-id=8-1975)

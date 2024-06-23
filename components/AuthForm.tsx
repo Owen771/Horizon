@@ -12,6 +12,7 @@ import CustomInput from "./CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { getLoggedInUser, signIn, signUp } from "@/lib/actions/user.actions";
 
 // A reusable form comp for sign-in and sign-up
 const AuthForm = ({ type }: { type: string }) => {
@@ -19,7 +20,7 @@ const AuthForm = ({ type }: { type: string }) => {
   const [isLoading, setisLoading] = useState(false);
 
   const formSchema = authFormSchema(type);
-  const router = useRouter(); 
+  const router = useRouter();
 
   // Based on formSchema, zod with ts can know the form contains what fields exactly,
   // and validate them
@@ -36,25 +37,22 @@ const AuthForm = ({ type }: { type: string }) => {
     setisLoading(true);
     try {
       // Sign up with Appwrite & create plain token
-      if (type === 'sign-up') {
-        // const newUser = await signUp(data);
-        // setUser(newUser);
-      } else if (type === 'sign-in') {
-
+      if (type === "sign-up") {
+        const newUser = await signUp(data);
+        setUser(newUser);
+      } else if (type === "sign-in") {
         // const resp = await signIn({
         //   email: data.email,
         //   password: data.password,
-        // })
-
-        // if (resp) router.push('/')
-      } 
-      
+        // });
+        // if (resp) router.push("/");
+      }
     } catch (error) {
       console.log(error);
     } finally {
       setisLoading(false);
     }
-  }
+  };
 
   return (
     <section className="auth-form">
