@@ -9,10 +9,10 @@ export const signIn = async ({ email, password }: signInProps) => {
   try {
     // Mutation / Database / Make fetch
     const { account } = await createAdminClient();
-    
-    const resp = await account.createEmailPasswordSession(email, password);
-    return parseStringify(resp);
 
+    const resp = await account.createEmailPasswordSession(email, password);
+    
+    return parseStringify(resp);
   } catch (error) {
     console.error("Error", error);
   }
@@ -50,11 +50,22 @@ export const signUp = async (userData: SignUpParams) => {
 export async function getLoggedInUser() {
   try {
     const { account } = await createSessionClient();
-    return await account.get();
+    const result = await account.get();
+
+    return parseStringify(result);
   } catch (error) {
     return null;
   }
 }
 
+export const accountLogout = async () => {
+  try {
+    const { account } = await createSessionClient();
 
-export const 
+    cookies().delete("appwrite-session");
+
+    await account.deleteSession("current");
+  } catch (error) {
+    return null;
+  }
+};
