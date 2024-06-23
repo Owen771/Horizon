@@ -26,6 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Appwrite: use as Database
   - but also it supports Authentication, Functions, Storage, and Messaging to your projects using the frameworks and languages of your choice.
 - Dwolla: provides clients with a connection to the ACH Network by its own real-time payments network
+- Sentry: error tracking and performance monitoring platform
 
 ## Setup
 
