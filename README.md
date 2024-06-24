@@ -22,11 +22,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Tailwindcss: styling
 - Eslint: ensure code quality
 - Zod: TypeScript-first schema validation with static type inference (one use case is form)
-- Shadcn ui: Component library, [import Components](components/ui)
-- Appwrite: use as Database
-  - but also it supports Authentication, Functions, Storage, and Messaging to your projects using the frameworks and languages of your choice.
-- Dwolla: provides clients with a connection to the ACH Network by its own real-time payments network
+- Shadcn ui: Component library, [imported Components](components/ui)
+- Appwrite: use as Authentication & Database
+  - It also supports Functions, Storage, and Messaging to your projects using the frameworks and languages of your choice.
+- Dwolla: payment processor, that provides clients with a connection to the ACH Network by its own real-time payments network
 - Sentry: error tracking and performance monitoring platform
+- Plaid: connect app to thousand of different banks securely
 
 ## Setup
 
