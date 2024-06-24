@@ -7,11 +7,15 @@ import {
   usePlaidLink,
 } from "react-plaid-link";
 import { useRouter } from "next/navigation";
-import { createLinkToken } from "@/lib/actions/user.actions";
+import {
+  createLinkToken,
+  exchangePublicToken,
+} from "@/lib/actions/user.actions";
 
 const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
   const [token, setToken] = useState("");
   const router = useRouter();
+
 
   // [] as dep ensures that the effect is only run once,
   // it's illegal to make the func call by useEffect as async,
@@ -29,13 +33,15 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
 
   const onSuccess = useCallback<PlaidLinkOnSuccess>(
     async (public_token: string) => {
-      // await exchangePublicToken({
-      //   publicToken: public_token,
-      //   user,
-      // })
+      await exchangePublicToken({
+        publicToken: public_token,
+        user,
+      });
 
       router.push("/");
-    }, [user]);
+    },
+    [user]
+  );
 
   const config: PlaidLinkOptions = {
     token,

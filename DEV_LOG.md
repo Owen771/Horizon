@@ -144,7 +144,24 @@ Global sidebar / mobile nav bar
 - 如果使用回呼函數更新子元件的狀態，將會導致子元件以新的狀態重新渲染。如果回呼函數在渲染之間發生變化，它將導致子元件以新狀態重新渲染，即使狀態實際上沒有改變。
 
 - If the callback function is used to update the state of the child component, it will cause the child component to re-render with the new state. If the callback function changes between renders, it will cause the child component to re-render with the new state, even if the state has not actually changed.
-- 透過確保回調函數在渲染之間保持相同的引用（只要其依賴項沒有更改）來防止子元件不必要的重新渲染。這可以透過減少不必要的重新渲染和閃爍來幫助優化效能並改善使用者體驗
+- 透過確保回調函數在渲染之間保持相同的引用（只要其依賴項沒有更改）來防止子元件不必要的重新渲染。這可以透過
+減少不必要的重新渲染和閃爍來幫助優化效能並改善使用者體驗
+
+
+## Typescript - ! operator
+
+- assert fields is not null or undefined
+- Using the ! operator incorrectly can lead to runtime errors
+
+```typescript
+function printName(name: string | null): void {
+  console.log(name!.toUpperCase());
+}
+
+printName(null); // throws an error
+printName('john'); // logs JOHN
+```
+
 
 ## Reference
 

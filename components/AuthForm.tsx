@@ -12,7 +12,7 @@ import CustomInput from "./CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { getLoggedInUser, signIn, signUp } from "@/lib/actions/user.actions";
+import { signIn, signUp } from "@/lib/actions/user.actions";
 import PlaidLink from "./PlaidLink";
 
 // A reusable form comp for sign-in and sign-up
@@ -39,14 +39,26 @@ const AuthForm = ({ type }: { type: string }) => {
     try {
       // Sign up with Appwrite & create plain token
       if (type === "sign-up") {
-        const newUser = await signUp(data);
+        const userData = {
+          firstName: data.firstName!,
+          lastName: data.lastName!,
+          address1: data.address1!,
+          city: data.city!,
+          state: data.state!,
+          postalCode: data.postalCode!,
+          dateOfBirth: data.dateOfBirth!,
+          ssn: data.ssn!,
+          email: data.email,
+          password: data.password,
+        };
+
+        const newUser = await signUp(userData);
         setUser(newUser);
       } else if (type === "sign-in") {
         const resp = await signIn({
           email: data.email,
           password: data.password,
         });
-        console.log(resp);
         if (resp) router.push("/");
       }
     } catch (error) {
@@ -84,13 +96,12 @@ const AuthForm = ({ type }: { type: string }) => {
           </h1>
         </div>
       </header>
-
-      {/* {user ? ( */}
+      {user ? (
         <div className="flex flex-col gap-4">
           {/* PlaidLink for user to link their bank account */}
           <PlaidLink user={user} variant="primary" />
         </div>
-      {/* ) : ( */}
+      ) : (
         // Shadcn's Form is wrapper of typical HTML form
         <>
           <Form {...form}>
@@ -202,7 +213,7 @@ const AuthForm = ({ type }: { type: string }) => {
             </Link>
           </footer>
         </>
-      {/* )} */}
+      )}
     </section>
   );
 };

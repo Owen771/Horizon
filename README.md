@@ -25,9 +25,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Shadcn ui: Component library, [imported Components](components/ui)
 - Appwrite: use as Authentication & Database
   - It also supports Functions, Storage, and Messaging to your projects using the frameworks and languages of your choice.
-- Dwolla: payment processor, that provides clients with a connection to the ACH Network by its own real-time payments network
+- Dwolla: payment processor we uses to transfer fund. One use case is it provides a connection to the ACH Network by its own real-time payments network.
 - Sentry: error tracking and performance monitoring platform
-- Plaid: connect app to thousand of different banks securely
+- Plaid: Allow app like this to securely connect bank accounts
 
 ## Setup
 
