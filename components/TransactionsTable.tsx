@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -24,9 +23,8 @@ const CategoryBadge = ({ category }: CategoryBadgeProps) => {
 
   return (
     <div className={cn("category-badge", borderColor, chipBackgroundColor)}>
-      <div className={cn("size-2 rounded-full", backgroundColor)}>
-        <p className={cn("text-[12px] font-medium", textColor)}>{category}</p>
-      </div>
+      <div className={cn("size-2 rounded-full", backgroundColor)} />
+      <p className={cn("text-[12px] font-medium", textColor)}>{category}</p>
     </div>
   );
 };

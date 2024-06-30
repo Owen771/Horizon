@@ -1,9 +1,18 @@
-import React from 'react'
+import { getAccounts } from "@/lib/actions/bank.actions";
+import { getLoggedInUser } from "@/lib/actions/user.actions";
 
-const Trnx = () => {
-  return (
-    <div>Trnx</div>
-  )
-}
+const TransactionHistory = async ({
+  searchParams: { id, page },
+}: SearchParamProps) => {
+  const loggedIn = await getLoggedInUser();
+  const ac = await getAccounts({
+    userId: loggedIn.$id,
+  });
 
-export default Trnx
+
+
+
+  return <div>Trnx</div>;
+};
+
+export default TransactionHistory;
