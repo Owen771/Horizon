@@ -9,13 +9,12 @@ import React from "react";
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   const loggedIn = await getLoggedInUser();
   const accounts = await getAccounts({ userId: loggedIn.$id });
-  const currentPage = Number(page as string) || 1;
-
   if (!accounts) return;
 
   const accountsData = accounts?.data;
   const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
   const account = await getAccount({ appwriteItemId });
+  const currentPage = Number(page as string) || 1;
 
   return (
     <section className="home">

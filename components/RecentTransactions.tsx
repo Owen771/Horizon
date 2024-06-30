@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BankTabItem } from "./BankTabItem";
 import BankInfo from "./BankInfo";
+import TransactionsTable from "./TransactionsTable";
 
 const RecentTransactions = ({
   accounts,
@@ -23,7 +24,6 @@ const RecentTransactions = ({
       </header>
 
       {/* Tabs for diff bank accounts */}
-
       <Tabs defaultValue={appwriteItemId} className="w-full">
         <TabsList className="recent-transactions-tablist">
           {accounts.map((account: Account) => (
@@ -48,6 +48,8 @@ const RecentTransactions = ({
               appwriteItemId={appwriteItemId}
               type="full"
             />
+
+            <TransactionsTable transactions={transactions} />
           </TabsContent>
         ))}
       </Tabs>
@@ -56,3 +58,4 @@ const RecentTransactions = ({
 };
 
 export default RecentTransactions;
+
