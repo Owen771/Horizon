@@ -45,7 +45,7 @@ export const getAccounts = async ({ userId }: getAccountsProps) => {
           type: accountData.type as string,
           subtype: accountData.subtype! as string,
           appwriteItemId: bank.$id,
-          sharaebleId: bank.sharaebleId,
+          sharaebleId: bank.shareableId,
         };
 
         return account;
@@ -115,8 +115,8 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
     };
 
     // sort transactions by date such that the most recent transaction is first
-      // const allTransactions = [...transactions, ...transferTransactions].sort(
-      const allTransactions = [...transactions].sort(
+    // const allTransactions = [...transactions, ...transferTransactions].sort(
+    const allTransactions = [...transactions].sort(
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
 
@@ -184,3 +184,4 @@ export const getTransactions = async ({
     console.error("An error occurred while getting the accounts:", error);
   }
 };
+
