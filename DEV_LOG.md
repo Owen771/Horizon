@@ -166,4 +166,4 @@ printName('john'); // logs JOHN
 ## Reference
 
 - [App design in Figma](https://www.figma.com/design/jvcjzjCKw9YlhCNOIY1GPY/Horizon-Banking-App?node-id=8-1975)
-
+- [Yt tutorial Video](https://www.youtube.com/watch?v=PuOVqP_cjkE&ab_channel=JavaScriptMastery)
