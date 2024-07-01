@@ -42,7 +42,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
         />
       </div>
 
-      {/* RightSidebar only use in Home page, so putting RightSidebar here 
+      {/* RightSidebar is only use on the Home page, so putting RightSidebar here 
       rather than ./layout.tsx  */}
       <RightSidebar
         user={loggedIn}
