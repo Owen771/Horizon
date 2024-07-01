@@ -7,8 +7,6 @@ import Category from "./Category";
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
   const categories: CategoryCount[] = countTransactionCategories(transactions);
-  console.log(categories);
-  
 
   return (
     <aside className="right-sidebar">
@@ -70,7 +68,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
               <Category key={category.name} category={category} />
             ))}
           </div>
-        </div> 
+        </div>
       </section>
     </aside>
   );
