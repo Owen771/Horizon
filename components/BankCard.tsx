@@ -8,7 +8,6 @@ const BankCard = ({
   userName,
   showBalance = true,
 }: CreditCardProps) => {
-
   return (
     <div className="flex flex-col">
       {/* entire card is click-able */}
@@ -57,7 +56,7 @@ const BankCard = ({
       </Link>
 
       {/* COPY card number */}
-      {showBalance && <Copy title={account?.sharaebleId} />}
+      {showBalance && <Copy title={account?.shareableId} />}
     </div>
   );
 };
